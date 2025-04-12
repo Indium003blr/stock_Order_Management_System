@@ -10,8 +10,8 @@ interface Stock {
 function GridData() {
     const [forecasts, setForecasts] = useState<Stock[]>([
       {companyName:"TATA",StockPrice:10,AvlStock:20},
-      {companyName:"HCL",StockPrice:10,AvlStock:20},
-      {companyName:"Tech M",StockPrice:10,AvlStock:20}
+      {companyName:"HCL",StockPrice:10,AvlStock:200},
+      {companyName:"Tech M",StockPrice:10,AvlStock:230}
     ]);
 
     const contents = forecasts === undefined
