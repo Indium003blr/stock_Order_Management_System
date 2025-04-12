@@ -1,0 +1,84 @@
+/* StockOrder.css */
+
+.stock-order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stock-order-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.stock-order-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stock-order-form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.stock-order-form input,
+.stock-order-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.stock-order-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stock-order-form button:hover {
+    background-color: #0056b3;
+}
+
+.stock-order-list {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+.stock-order-list th,
+.stock-order-list td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.stock-order-list th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.stock-order-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.stock-order-list tr:hover {
+    background-color: #f1f1f1;
+}
