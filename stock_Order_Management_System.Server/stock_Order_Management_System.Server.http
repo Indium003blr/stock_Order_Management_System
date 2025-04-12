@@ -1,0 +1,6 @@
+@stock_Order_Management_System.Server_HostAddress = http://localhost:5078
+
+GET {{stock_Order_Management_System.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
