@@ -21,21 +21,21 @@ return (
         <p className="clock-hours clock-timer">
         </p>
         <p className="clock-label">
-          Hours
+          Company
         </p>
       </div>
       <div className="clock-col">
         <p className="clock-minutes clock-timer">
         </p>
         <p className="clock-label">
-          Minutes
+          Stock Price
         </p>
       </div>
       <div className="clock-col">
         <p className="clock-seconds clock-timer">
         </p>
         <p className="clock-label">
-          Seconds
+          All Stock
         </p>
       </div>
     </div>
