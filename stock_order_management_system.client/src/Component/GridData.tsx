@@ -1,18 +1,33 @@
-import {  useState } from 'react';
+import {  useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Stock {
-    companyName: string;
-    StockPrice: number;
-    AvlStock: number;
+    id:number,
+    company_Name: string;
+    stock_Price: number;
+    number_Of_Stock: number;
+    buy_Sell_Status:number;
 }
 
 function GridData() {
-    const [forecasts, setForecasts] = useState<Stock[]>([
-      {companyName:"TATA",StockPrice:10,AvlStock:20},
-      {companyName:"HCL",StockPrice:10,AvlStock:200},
-      {companyName:"Tech M",StockPrice:10,AvlStock:230}
-    ]);
+    const [forecasts, setForecasts] = useState<Stock[]>([]);
+
+    console.log("forecaset",forecasts);
+
+    useEffect(() => {
+    
+        const requestOptions = {
+          method: "GET",
+          redirect: "follow"
+        };
+        
+        fetch("https://localhost:7109/api/OrderPlacement", requestOptions)
+          .then((response) => response.text())
+          .then((result: any) => 
+            setForecasts(JSON.parse(result))
+          )
+          .catch((error) => console.error(error));
+      }, []);
 
     const contents = forecasts === undefined
         ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
@@ -26,14 +41,14 @@ function GridData() {
                 </tr>
             </thead>
             <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.companyName}>
-                        <td>{forecast.companyName}</td>
-                        <td>{forecast.StockPrice}</td>
-                        <td>{forecast.AvlStock}</td>
+                {forecasts?.map(forecast =>
+                    <tr key={forecast.company_Name}>
+                        <td>{forecast.company_Name}</td>
+                        <td>{forecast.stock_Price}</td>
+                        <td>{forecast.number_Of_Stock}</td>
                         <td>
-                          <Link to='/stock'>Buy</Link>&nbsp;
-                          <Link to='/stock'>Sell</Link>
+                          <Link to={`/stock/${forecast.id}`}>Buy</Link>&nbsp;
+                          <Link to={`/stock/${forecast.id}`}>Sell</Link>
                         </td>
                     </tr>
                 )}

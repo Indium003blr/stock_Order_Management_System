@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')!).render(
         <Header/>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/stock" element={<StockOrder stockSymbol={''} />} />
+          <Route path="/stock/:id" element={<StockOrder/>} />
           <Route path="/contact" element={<App />} />
         </Routes>
       </div>
