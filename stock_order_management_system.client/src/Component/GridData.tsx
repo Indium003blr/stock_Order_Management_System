@@ -1,4 +1,5 @@
 import {  useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Stock {
     companyName: string;
@@ -31,8 +32,8 @@ function GridData() {
                         <td>{forecast.StockPrice}</td>
                         <td>{forecast.AvlStock}</td>
                         <td>
-                          <a href='#'>Buy</a>&nbsp;
-                          <a href='#'>Sell</a>
+                          <Link to='/stock'>Buy</Link>&nbsp;
+                          <Link to='/stock'>Sell</Link>
                         </td>
                     </tr>
                 )}
