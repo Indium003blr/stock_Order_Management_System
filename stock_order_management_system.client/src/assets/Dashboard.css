@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.charts {
+  margin-bottom: 2%;
+  min-width: 60vw;
+}
+
+.clocks{
+  display:flex;
+  flex-direction: column;
+}
+body {
+  background: #000000;  
+  background: -webkit-linear-gradient(to top, #434343, #000000);
+  background: linear-gradient(to top, #434343, #000000); 
+  display:flex;
+  justify-content: space-around;
+  flex-direction:row;
+}
+
+.Ukclock-hours:before {
+  content: var(--Uktimer-hours);
+}
+
+.clock-hours:before {
+  content: var(--timer-hours);
+}
+.clock-minutes:before {
+  content: var(--timer-minutes);
+}
+.clock-seconds:before {
+  content: var(--timer-seconds);
+}
+.clock-container {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 40px 10px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, .15), 0 15px 90px 30px rgba(0, 0, 0, .25);
+}
+.clock-col {
+  text-align: center;
+  margin-right: 40px;
+  margin-left: 40px;
+  min-width: 90px;
+  position: relative;
+  
+}
+.clock-col:not(:last-child):before {
+  top: 35%;
+}
+.clock-col:not(:last-child):after {
+  top: 50%;
+}
+.clock-timer:before {
+  color:black;
+  font-size: 2.2rem;
+  
+}
+.clock-label {
+  color:black;
+  
+  font-size: 0.7rem;
+  margin-top: 10px;
+}
